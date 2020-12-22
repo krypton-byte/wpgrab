@@ -1,3 +1,5 @@
+#Made with love by Krypton-Byte
+#https://github.com/krypton-byte
 import os
 import re
 import threading
