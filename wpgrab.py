@@ -22,10 +22,10 @@ sn  =   Style.NORMAL
 sb  =   Style.BRIGHT
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-version=lambda sc:re.search('WordPress (.*?)\"',sc)[1] if re.search('WordPress (.*?)\"',sc) else "Unknown"
-themes=lambda sc:re.findall('wp-content\/themes\/(.*?)\/',sc)[1] if re.findall('wp-content\/themes\/(.*?)\/',sc) else "Unknown" 
+version=lambda sc:re.search('WordPress (.*?)\"',sc)[1] if re.search('WordPress (.*?)\"',sc) else m+"Unknown"
+themes=lambda sc:re.findall('wp-content\/themes\/(.*?)\/',sc)[1] if re.findall('wp-content\/themes\/(.*?)\/',sc) else m+"Unknown" 
 plugins=lambda sc:list(set(re.findall('wp-content\/plugins\/(.*?)\/',sc))) if re.findall('wp-content\/plugins\/(.*?)\/',sc) else []
-author=lambda url:re.search('/author/(.*?)/', url)[1] if re.search('/author/(.*?)/', url) else "Unknown"
+author=lambda url:re.search('/author/(.*?)/', url)[1] if re.search('/author/(.*?)/', url) else m+"Unknown"
 
 p = '\x1b[0m'
 m = '\x1b[91m'
