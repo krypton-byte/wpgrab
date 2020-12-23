@@ -77,7 +77,7 @@ def main():
             work=input(u+'   Threads •'+m+'▶ '+h)
             if file in os.listdir('.'):
                 with ThreadPoolExecutor(max_workers=int(work) if work.isnumeric() else 5) as th:
-                    for i in list(set(open(file,"r").read().splitlines()) ^ {''}):
+                    for i in list(set(open(file,"r").read().splitlines()) - {''}):
                         th.submit(owhkey, i)
             else:
                 print(m+"\t["+k+"+"+m+"]"+bm+" File Tidak Di Temukan "+m+"["+k+"+"+m+"]")
